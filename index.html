@@ -185,13 +185,25 @@
 
         <!-- Tombol Pengingat dengan Proteksi PIN dan Pratinjau Lembar Kerja -->
         <div class="w-full max-w-6xl flex flex-col items-center pb-8">
-            <button onclick="promptPengingatPin()" 
-                    class="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-semibold px-6 py-3 rounded-xl transition duration-200 shadow-lg border border-rose-400/40 cursor-pointer mb-6 text-sm sm:text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-                <span>Buka Tautan Pengingat Full</span>
-            </button>
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <!-- Tombol Buka Tautan Pengingat Full -->
+                <button onclick="promptPengingatPin()" 
+                        class="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-semibold px-6 py-3 rounded-xl transition duration-200 shadow-lg border border-rose-400/40 cursor-pointer text-sm sm:text-base">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    <span>Buka Tautan Pengingat Full</span>
+                </button>
+
+                <!-- Tombol LKH Tepat di Bawah Tombol Pengingat -->
+                <button onclick="promptLkhPin()" 
+                        class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-xl transition duration-200 shadow-lg border border-indigo-400/40 cursor-pointer text-sm sm:text-base">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>LKH (Laporan Kinerja Harian)</span>
+                </button>
+            </div>
 
             <!-- Pratinjau Spreadsheet Pengingat -->
             <div id="pengingat-preview-container" class="w-full bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3 sm:p-4 shadow-2xl flex flex-col items-center">
@@ -717,7 +729,7 @@
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Autorisasi Akses Data</h3>
-            <p id="pin-modal-desc" class="text-xs text-gray-300 mb-4">Masukkan 4 digit PIN (1234) untuk membuka halaman arsip data.</p>
+            <p id="pin-modal-desc" class="text-xs text-gray-300 mb-4 hidden"></p>
             
             <form onsubmit="handlePinSubmit(event)">
                 <input type="password" id="pin-input" maxlength="4" placeholder="••••" autocomplete="off" autofocus
@@ -743,7 +755,6 @@
 
         function promptDataPin() {
             currentPinAction = 'data';
-            document.getElementById('pin-modal-desc').textContent = 'Masukkan 4 digit PIN (1234) untuk membuka halaman arsip data.';
             document.getElementById('pin-input').value = '';
             document.getElementById('pin-error').classList.add('hidden');
             document.getElementById('pin-modal').classList.remove('hidden');
@@ -752,7 +763,14 @@
 
         function promptPengingatPin() {
             currentPinAction = 'pengingat';
-            document.getElementById('pin-modal-desc').textContent = 'Masukkan 4 digit PIN (1234) untuk membuka tautan Pengingat.';
+            document.getElementById('pin-input').value = '';
+            document.getElementById('pin-error').classList.add('hidden');
+            document.getElementById('pin-modal').classList.remove('hidden');
+            setTimeout(() => { document.getElementById('pin-input').focus(); }, 100);
+        }
+
+        function promptLkhPin() {
+            currentPinAction = 'lkh';
             document.getElementById('pin-input').value = '';
             document.getElementById('pin-error').classList.add('hidden');
             document.getElementById('pin-modal').classList.remove('hidden');
@@ -773,6 +791,8 @@
                     switchToDataView();
                 } else if (currentPinAction === 'pengingat') {
                     window.open('https://docs.google.com/spreadsheets/d/1BdXl1MYMkec-EHcNcfB6S3n0pTEGBvsnVTeESFn3_Q8/edit?usp=sharing', '_blank');
+                } else if (currentPinAction === 'lkh') {
+                    window.open('https://drive.google.com/drive/folders/1bxoU-73FvcRFk1itbPVyOx3nlMlQpTia?usp=drive_link', '_blank');
                 }
             } else {
                 const errorEl = document.getElementById('pin-error');
