@@ -366,190 +366,9 @@
                     <div class="max-w-4xl w-full bg-slate-900/80 border border-white/10 rounded-2xl p-8 shadow-xl">
                         <i data-lucide="database" class="w-12 h-12 text-blue-400 mx-auto mb-3"></i>
                         <h4 class="text-base font-bold text-white mb-1">Pusat Data Persuratan</h4>
-                        <p class="text-xs text-slate-400 mb-6">Silakan pilih kategori data persuratan di bawah ini untuk melihat lembar kerja terkait.</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto w-full">
-                            <button 
-                                id="open-surat-masuk-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 active:translate-y-1 text-emerald-100 border border-emerald-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Surat Masuk</span>
-                            </button>
-                            <button 
-                                id="open-surat-keluar-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 active:translate-y-1 text-blue-100 border border-blue-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Surat Keluar</span>
-                            </button>
-                            <button 
-                                id="open-aktif-bekerja-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-rose-600/90 via-rose-700/90 to-rose-900/90 hover:from-rose-500 hover:to-rose-800 active:translate-y-1 text-rose-100 border border-rose-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(225,29,72,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(225,29,72,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Aktif Bekerja</span>
-                            </button>
-                            <button 
-                                id="open-usulan-berkala-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-orange-600/90 via-orange-700/90 to-orange-900/90 hover:from-orange-500 hover:to-orange-800 active:translate-y-1 text-orange-100 border border-orange-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(234,88,12,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(234,88,12,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Usulan Berkala</span>
-                            </button>
-                            <button 
-                                id="open-usulan-naik-pangkat-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-pink-600/90 via-pink-700/90 to-pink-900/90 hover:from-pink-500 hover:to-pink-800 active:translate-y-1 text-pink-100 border border-pink-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(219,39,119,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(219,39,119,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Usulan Naik Pangkat</span>
-                            </button>
-                            <button 
-                                id="open-ket-salah-penulisan-ijazah-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-lime-600/90 via-lime-700/90 to-lime-900/90 hover:from-lime-500 hover:to-lime-800 active:translate-y-1 text-lime-100 border border-lime-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(101,163,13,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(101,163,13,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Ket. Salah Penulisan Ijazah</span>
-                            </button>
-                            <button 
-                                id="open-prestasi-non-akademik-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-sky-600/90 via-sky-700/90 to-sky-900/90 hover:from-sky-500 hover:to-sky-800 active:translate-y-1 text-sky-100 border border-sky-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(2,132,199,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(2,132,199,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Prestasi Non Akademik</span>
-                            </button>
-                            <button 
-                                id="open-rekom-menerima-siswa-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 active:translate-y-1 text-emerald-100 border border-emerald-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Rekom Menerima Siswa/i</span>
-                            </button>
-                            <button 
-                                id="open-prestasi-akademik-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-violet-600/90 via-violet-700/90 to-violet-900/90 hover:from-violet-500 hover:to-violet-800 active:translate-y-1 text-violet-100 border border-violet-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(124,58,237,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(124,58,237,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Prestasi Akademik</span>
-                            </button>
-                            <button 
-                                id="open-ket-telah-mengikuti-ujian-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 active:translate-y-1 text-amber-100 border border-amber-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Ket. Telah Mengikuti Ujian</span>
-                            </button>
-                            <button 
-                                id="open-ket-pindah-sekolah-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 active:translate-y-1 text-blue-100 border border-blue-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Ket. Pindah Sekolah</span>
-                            </button>
-                            <button 
-                                id="open-pemanggilan-ortu-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-teal-600/90 via-teal-700/90 to-teal-900/90 hover:from-teal-500 hover:to-teal-800 active:translate-y-1 text-teal-100 border border-teal-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(13,148,136,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(13,148,136,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Pemanggilan Orang Tua/Wali</span>
-                            </button>
-                            <button 
-                                id="open-pencairan-rek-koran-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 active:translate-y-1 text-emerald-100 border border-emerald-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Pencairan &amp; Rek. Koran</span>
-                            </button>
-                            <button 
-                                id="open-pinjam-pakai-sarpras-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-purple-600/90 via-purple-700/90 to-purple-900/90 hover:from-purple-500 hover:to-purple-800 active:translate-y-1 text-purple-100 border border-purple-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(147,51,234,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(147,51,234,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Pinjam Pakai Sarpras</span>
-                            </button>
-                            <button 
-                                id="open-peminjaman-bank-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 active:translate-y-1 text-indigo-100 border border-indigo-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Peminjaman di BANK</span>
-                            </button>
-                            <button 
-                                id="open-surat-pengantar-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 active:translate-y-1 text-blue-100 border border-blue-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(37,99,235,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Surat Pengantar</span>
-                            </button>
-                            <button 
-                                id="open-spt-sppd-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 active:translate-y-1 text-indigo-100 border border-indigo-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">SPT &amp; SPPD</span>
-                            </button>
-                            <button 
-                                id="open-undangan-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-rose-600/90 via-rose-700/90 to-rose-900/90 hover:from-rose-500 hover:to-rose-800 active:translate-y-1 text-rose-100 border border-rose-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(225,29,72,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(225,29,72,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Undangan</span>
-                            </button>
-                            <button 
-                                id="open-aktif-mengajar-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-purple-600/90 via-purple-700/90 to-purple-900/90 hover:from-purple-500 hover:to-purple-800 active:translate-y-1 text-purple-100 border border-purple-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(147,51,234,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(147,51,234,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Aktif Mengajar</span>
-                            </button>
-                            <button 
-                                id="open-aktif-belajar-sekolah-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 active:translate-y-1 text-emerald-100 border border-emerald-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(16,185,129,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Aktif Belajar/Sekolah</span>
-                            </button>
-                            <button 
-                                id="open-permohonan-pengawas-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 active:translate-y-1 text-amber-100 border border-amber-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Permohonan Pengawas</span>
-                            </button>
-                            <button 
-                                id="open-pernyataan-kedisiplinan-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-cyan-600/90 via-cyan-700/90 to-cyan-900/90 hover:from-cyan-500 hover:to-cyan-800 active:translate-y-1 text-cyan-100 border border-cyan-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(8,145,178,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(8,145,178,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Pernyataan Kedisiplinan</span>
-                            </button>
-                            <button 
-                                id="open-spmt-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 active:translate-y-1 text-indigo-100 border border-indigo-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">SPMT</span>
-                            </button>
-                            <button 
-                                id="open-surat-balasan-pengawas-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-teal-600/90 via-teal-700/90 to-teal-900/90 hover:from-teal-500 hover:to-teal-800 active:translate-y-1 text-teal-100 border border-teal-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(13,148,136,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(13,148,136,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Surat Balasan Pengawas</span>
-                            </button>
-                            <button 
-                                id="open-persetujuan-belajar-pegawai-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 active:translate-y-1 text-amber-100 border border-amber-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Persetujuan Belajar Pegawai</span>
-                            </button>
-                            <button 
-                                id="open-uji-coba-web-data-btn"
-                                class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl bg-gradient-to-b from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 active:translate-y-1 text-indigo-100 border border-indigo-400/40 text-xs sm:text-sm font-bold tracking-wide shadow-[0_8px_20px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-3px_4px_rgba(0,0,0,0.6)] active:shadow-[0_2px_8px_rgba(79,70,229,0.3),inset_0_1px_1px_rgba(0,0,0,0.4)] transition-all duration-150"
-                            >
-                                <i data-lucide="file-spreadsheet" class="w-4 h-4 drop-shadow flex-shrink-0"></i>
-                                <span class="drop-shadow truncate">Uji Coba Web</span>
-                            </button>
+                        <p class="text-xs text-slate-400 mb-6">Silakan pilih kategori data persuratan di bawah ini (buka secara <span class="text-slate-200 font-semibold">Iframe</span> atau <span class="text-slate-200 font-semibold">Full</span>).</p>
+                        <div id="data-menu-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto w-full text-left">
+                            <!-- Item kategori akan dirender secara otomatis dengan 2 pilihan: Iframe & Full -->
                         </div>
                     </div>
                 </div>
@@ -1245,6 +1064,242 @@
         const backToDataMenuFromUndanganBtn = document.getElementById('back-to-data-menu-from-undangan-btn');
         const backToDataMenuFromUjiCobaBtn = document.getElementById('back-to-data-menu-from-uji-coba-btn');
         const dataModalTitle = document.getElementById('data-modal-title');
+
+        // Daftar lengkap kategori Pusat Data Persuratan beserta link Google Sheets & ID view iframe
+        const dataCategories = [
+            {
+                id: 'surat-masuk',
+                title: 'Surat Masuk',
+                colorClass: 'from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 text-emerald-100 border-emerald-400/40',
+                viewEl: suratMasukView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1zYwP7CwWQcJGD65A9nyf_y7JHYtINpHuKmyPp59q96w/edit?usp=sharing'
+            },
+            {
+                id: 'surat-keluar',
+                title: 'Surat Keluar',
+                colorClass: 'from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 text-blue-100 border-blue-400/40',
+                viewEl: suratKeluarView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1IXoqv1ZwJGrgZmR4yfLVuGB9TDAQJ7y92CKeHBnXMl8/edit?usp=sharing'
+            },
+            {
+                id: 'aktif-bekerja',
+                title: 'Aktif Bekerja',
+                colorClass: 'from-rose-600/90 via-rose-700/90 to-rose-900/90 hover:from-rose-500 hover:to-rose-800 text-rose-100 border-rose-400/40',
+                viewEl: aktifBekerjaView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/13H-a4fVmuveLUin0mNXEMVhtXiki4APCZCj8OpJkcec/edit?usp=sharing'
+            },
+            {
+                id: 'usulan-berkala',
+                title: 'Usulan Berkala',
+                colorClass: 'from-orange-600/90 via-orange-700/90 to-orange-900/90 hover:from-orange-500 hover:to-orange-800 text-orange-100 border-orange-400/40',
+                viewEl: usulanBerkalaView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1bS9WH1bFlXKX6nIssEPV5Px1RDCKLQPd-tHakgDIxHQ/edit?usp=sharing'
+            },
+            {
+                id: 'usulan-naik-pangkat',
+                title: 'Usulan Naik Pangkat',
+                colorClass: 'from-pink-600/90 via-pink-700/90 to-pink-900/90 hover:from-pink-500 hover:to-pink-800 text-pink-100 border-pink-400/40',
+                viewEl: usulanNaikPangkatView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1VC34B8njdlHZ7grkTVELbC5vE3Cfb7WnYcSHaIHOCAM/edit?usp=sharing'
+            },
+            {
+                id: 'ket-salah-penulisan-ijazah',
+                title: 'Ket. Salah Penulisan Ijazah',
+                colorClass: 'from-lime-600/90 via-lime-700/90 to-lime-900/90 hover:from-lime-500 hover:to-lime-800 text-lime-100 border-lime-400/40',
+                viewEl: ketSalahPenulisanIjazahView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1U1h-G449Atht0LfwmmLp6hDPO2wP8oSnTMoxgM3bBVg/edit?usp=sharing'
+            },
+            {
+                id: 'prestasi-non-akademik',
+                title: 'Prestasi Non Akademik',
+                colorClass: 'from-sky-600/90 via-sky-700/90 to-sky-900/90 hover:from-sky-500 hover:to-sky-800 text-sky-100 border-sky-400/40',
+                viewEl: prestasiNonAkademikView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1vcF3JLgiDcC1zQMa_5W5ZjX-nNIz3FEoJ3cDkD5NMYE/edit?usp=sharing'
+            },
+            {
+                id: 'rekom-menerima-siswa',
+                title: 'Rekom Menerima Siswa/i',
+                colorClass: 'from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 text-emerald-100 border-emerald-400/40',
+                viewEl: rekomMenerimaSiswaView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1wD6wnz700KCpJ-2gHVm0Sl1Y3-c9wBF7P9IYC7MwkWI/edit?usp=sharing'
+            },
+            {
+                id: 'prestasi-akademik',
+                title: 'Prestasi Akademik',
+                colorClass: 'from-violet-600/90 via-violet-700/90 to-violet-900/90 hover:from-violet-500 hover:to-violet-800 text-violet-100 border-violet-400/40',
+                viewEl: prestasiAkademikView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1V0Q1EVFCywMjbfSevVLqL_nikjbsMXav-3qPZ0RbtzY/edit?usp=sharing'
+            },
+            {
+                id: 'ket-telah-mengikuti-ujian',
+                title: 'Ket. Telah Mengikuti Ujian',
+                colorClass: 'from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 text-amber-100 border-amber-400/40',
+                viewEl: ketTelahMengikutiUjianView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1WenDP1JYDqR4hYoEWcAPsq3RXV4TMDjEBRzDbx1aXVs/edit?usp=sharing'
+            },
+            {
+                id: 'ket-pindah-sekolah',
+                title: 'Ket. Pindah Sekolah',
+                colorClass: 'from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 text-blue-100 border-blue-400/40',
+                viewEl: ketPindahSekolahView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1mIVtgeZE8YSGOxnaghsLLH6mDUnCvTymYNLIZNawdhA/edit?usp=sharing'
+            },
+            {
+                id: 'pemanggilan-ortu',
+                title: 'Pemanggilan Orang Tua/Wali',
+                colorClass: 'from-teal-600/90 via-teal-700/90 to-teal-900/90 hover:from-teal-500 hover:to-teal-800 text-teal-100 border-teal-400/40',
+                viewEl: pemanggilanOrtuView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/16ShpXdojkRMAxNikYGBvxA7rjm72GpvywpiaEdzqVhw/edit?usp=sharing'
+            },
+            {
+                id: 'pencairan-rek-koran',
+                title: 'Pencairan & Rek. Koran',
+                colorClass: 'from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 text-emerald-100 border-emerald-400/40',
+                viewEl: pencairanRekKoranView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/17XD8Qu1awkrw4QZRKmKovxyP0IUmRVhwS42FXP1o9Xg/edit?usp=sharing'
+            },
+            {
+                id: 'pinjam-pakai-sarpras',
+                title: 'Pinjam Pakai Sarpras',
+                colorClass: 'from-purple-600/90 via-purple-700/90 to-purple-900/90 hover:from-purple-500 hover:to-purple-800 text-purple-100 border-purple-400/40',
+                viewEl: pinjamPakaiSarprasView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1JPmmPUqVil4YBbW6aWB-F52wc_3_5yMq0JmGnR9ic7I/edit?usp=sharing'
+            },
+            {
+                id: 'peminjaman-bank',
+                title: 'Peminjaman di BANK',
+                colorClass: 'from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 text-indigo-100 border-indigo-400/40',
+                viewEl: peminjamanBankView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1WBBXB9aNoSa8TpaJHlXleeBC6rt67pvllYaHuUv-FGA/edit?usp=sharing'
+            },
+            {
+                id: 'surat-pengantar',
+                title: 'Surat Pengantar',
+                colorClass: 'from-blue-600/90 via-blue-700/90 to-blue-900/90 hover:from-blue-500 hover:to-blue-800 text-blue-100 border-blue-400/40',
+                viewEl: suratPengantarView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1DXYS-a-ahdezJaig2JCYikSyxA3dEJ-lvA4CnJNOHn0/edit?usp=sharing'
+            },
+            {
+                id: 'spt-sppd',
+                title: 'SPT & SPPD',
+                colorClass: 'from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 text-indigo-100 border-indigo-400/40',
+                viewEl: sptSppdView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1xCcmrGWDBrZYDUCZGsPBTXla2k5FzGW2ZYxpzNjBSKY/edit?usp=sharing'
+            },
+            {
+                id: 'undangan',
+                title: 'Undangan',
+                colorClass: 'from-rose-600/90 via-rose-700/90 to-rose-900/90 hover:from-rose-500 hover:to-rose-800 text-rose-100 border-rose-400/40',
+                viewEl: undanganView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/12vnKsLEZZUZSKjslEYZl11d5N3keWJ53nB_OUFXmwls/edit?usp=sharing'
+            },
+            {
+                id: 'aktif-mengajar',
+                title: 'Aktif Mengajar',
+                colorClass: 'from-purple-600/90 via-purple-700/90 to-purple-900/90 hover:from-purple-500 hover:to-purple-800 text-purple-100 border-purple-400/40',
+                viewEl: aktifMengajarView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1zveeKSQhelbRLe_JMjEOPIclGZ1f6Kn9R51Df1khmy8/edit?usp=sharing'
+            },
+            {
+                id: 'aktif-belajar-sekolah',
+                title: 'Aktif Belajar/Sekolah',
+                colorClass: 'from-emerald-600/90 via-emerald-700/90 to-emerald-900/90 hover:from-emerald-500 hover:to-emerald-800 text-emerald-100 border-emerald-400/40',
+                viewEl: aktifBelajarSekolahView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1DkKT3AHEcDxAXLGjE0GTXLxU0SwScNclhIzOO4firQE/edit?usp=sharing'
+            },
+            {
+                id: 'permohonan-pengawas',
+                title: 'Permohonan Pengawas',
+                colorClass: 'from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 text-amber-100 border-amber-400/40',
+                viewEl: permohonanPengawasView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1yVe0n09sSPm87nj2XJ8UCBAak-p8yvh4h3YY2gWPn-g/edit?usp=sharing'
+            },
+            {
+                id: 'pernyataan-kedisiplinan',
+                title: 'Pernyataan Kedisiplinan',
+                colorClass: 'from-cyan-600/90 via-cyan-700/90 to-cyan-900/90 hover:from-cyan-500 hover:to-cyan-800 text-cyan-100 border-cyan-400/40',
+                viewEl: pernyataanKedisiplinanView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1Roc20wujPR_AFacWxWBe9KV8aPrSu2mbfG9cibSo7jw/edit?usp=sharing'
+            },
+            {
+                id: 'spmt',
+                title: 'SPMT',
+                colorClass: 'from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 text-indigo-100 border-indigo-400/40',
+                viewEl: spmtView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1w6Yf0NXkigLbDfGdRHgPwlbgrW5GI6N-rJV6Q1CDFrU/edit?usp=sharing'
+            },
+            {
+                id: 'surat-balasan-pengawas',
+                title: 'Surat Balasan Pengawas',
+                colorClass: 'from-teal-600/90 via-teal-700/90 to-teal-900/90 hover:from-teal-500 hover:to-teal-800 text-teal-100 border-teal-400/40',
+                viewEl: suratBalasanPengawasView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/11JV_70zPW2VQ1ho9wl8HOROhi2TIcWTLuu_ZrxU7_lQ/edit?usp=sharing'
+            },
+            {
+                id: 'persetujuan-belajar-pegawai',
+                title: 'Persetujuan Belajar Pegawai',
+                colorClass: 'from-amber-600/90 via-amber-700/90 to-amber-900/90 hover:from-amber-500 hover:to-amber-800 text-amber-100 border-amber-400/40',
+                viewEl: persetujuanBelajarPegawaiView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/14qIx36tgv7DvM93ZkykqTRpnRCMPqOZFfUFODy4xAOo/edit?usp=sharing'
+            },
+            {
+                id: 'uji-coba-web',
+                title: 'Uji Coba Web',
+                colorClass: 'from-indigo-600/90 via-indigo-700/90 to-indigo-900/90 hover:from-indigo-500 hover:to-indigo-800 text-indigo-100 border-indigo-400/40',
+                viewEl: ujiCobaWebView,
+                fullUrl: 'https://docs.google.com/spreadsheets/d/1HpL6xzjSJM79O9b7HFXxdDL8ZrTyddKz5ChQMWGiW-8/edit?usp=sharing'
+            }
+        ];
+
+        const dataMenuGrid = document.getElementById('data-menu-grid');
+        if (dataMenuGrid) {
+            dataMenuGrid.innerHTML = dataCategories.map(cat => `
+                <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between gap-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-b ${cat.colorClass} flex items-center justify-center flex-shrink-0 shadow">
+                            <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-white leading-snug line-clamp-2">${cat.title}</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 pt-1 border-t border-white/5">
+                        <button 
+                            type="button"
+                            data-iframe-cat="${cat.id}"
+                            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-slate-600/50 text-[11px] font-bold transition-all active:translate-y-0.5"
+                            title="Buka di dalam jendela ini (Iframe)"
+                        >
+                            <i data-lucide="layout" class="w-3.5 h-3.5 text-blue-400"></i>
+                            <span>Iframe</span>
+                        </button>
+                        <a 
+                            href="${cat.fullUrl}" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-gradient-to-b ${cat.colorClass} text-[11px] font-bold transition-all active:translate-y-0.5 shadow"
+                            title="Buka penuh di tab baru (Full)"
+                        >
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            <span>Full</span>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+
+            // Pasang event listener untuk setiap tombol Iframe
+            dataMenuGrid.querySelectorAll('[data-iframe-cat]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const catId = btn.getAttribute('data-iframe-cat');
+                    const category = dataCategories.find(c => c.id === catId);
+                    if (category && category.viewEl) {
+                        if (dataMenuView) dataMenuView.classList.add('hidden');
+                        category.viewEl.classList.remove('hidden');
+                        if (dataModalTitle) dataModalTitle.textContent = `Data ${category.title}`;
+                    }
+                });
+            });
+        }
 
         if (openAktifMengajarDataBtn) {
             openAktifMengajarDataBtn.addEventListener('click', () => {
