@@ -932,6 +932,52 @@
                     <i data-lucide="file-badge" class="w-5 h-5 text-amber-400"></i>
                     <h3 class="text-base font-bold text-white">Peraturan Gubernur (Pergub) Surat</h3>
                 </div>
+                <button id="close-pergub-modal-btn" class="p-1.5 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">Dokumen Peraturan Gubernur tentang Tata Naskah Dinas / Persuratan.</p>
+            <a 
+                href="https://drive.google.com/file/d/1IYjskDj6TD0_qTGPj19cmpTXSs1Vuagf/view?usp=drive_link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-colors mx-auto"
+            >
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                <span>Buka Dokumen Pergub</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MODAL LAYANAN PERSURATAN -->
+    <div id="service-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md hidden p-3 sm:p-6">
+        <div class="relative w-full max-w-4xl max-h-[88vh] bg-slate-900/95 border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-slate-950/60 flex-shrink-0">
+                <div class="flex items-center gap-2.5">
+                    <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
+                    <h3 id="service-modal-title" class="text-sm sm:text-base font-bold text-white tracking-wide">Pusat Layanan</h3>
+                </div>
+                <button id="close-service-modal-btn" class="p-1.5 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-center">
+                <div id="service-modal-icon-container" class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-3">
+                    <i id="service-modal-inner-icon" data-lucide="folder-open" class="w-6 h-6"></i>
+                </div>
+                <h4 id="service-modal-heading" class="text-base font-bold text-white mb-1">Layanan Persuratan</h4>
+                <p class="text-xs text-slate-400 mb-4">Pilih jenis layanan formulir di bawah ini untuk membuat pengajuan surat.</p>
+                <div id="service-modal-desc" class="w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inisialisasi ikon Lucide
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
         // Hilangkan sisi/latar hitam pada tanda tangan secara otomatis menggunakan Canvas + auto-crop tepi hitam
         (function processSignatureTransparency() {
             const img = document.getElementById('signature-img-fallback');
