@@ -344,6 +344,30 @@
         </div>
     </main>
 
+    <!-- FOOTER LABEL BUATAN AHMAD MUZANI DI PALING BAWAH WEB -->
+    <footer class="relative z-20 w-full mt-auto bg-transparent py-4 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-1.5">
+            <div class="px-4 py-1.5 flex flex-col items-center">
+                <div class="relative flex items-center justify-center overflow-hidden">
+                    <canvas id="signature-canvas" class="h-14 sm:h-16 w-auto object-contain hidden drop-shadow-[0_2px_8px_rgba(255,255,255,0.45)]"></canvas>
+                    <img 
+                        id="signature-img-fallback"
+                        src="https://lh3.googleusercontent.com/d/1lnHaqGeuUWC8F5wbrmla5Cp1Y9m-Rwug=w800" 
+                        alt="Tanda Tangan Ahmad Muzani" 
+                        crossorigin="anonymous"
+                        style="mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000 65%, transparent 98%); -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000 65%, transparent 98%);"
+                        class="h-14 sm:h-16 w-auto object-contain mix-blend-lighten filter contrast-[4] brightness-150 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
+                        onerror="this.style.display='none'"
+                    >
+                </div>
+                <div class="flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-slate-200 tracking-wide mt-0.5 drop-shadow">
+                    <span>Desain &amp; Pengembangan oleh</span>
+                    <span class="font-bold text-amber-300 drop-shadow-sm">Ahmad Muzani</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- MODAL / JENDELA DATA DI DALAM WEBSITE DENGAN SUB-MENU SURAT MASUK & SURAT KELUAR -->
     <div id="data-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md hidden p-3 sm:p-6">
         <div class="relative w-full max-w-5xl h-[85vh] bg-slate-900/95 border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
@@ -908,40 +932,97 @@
                     <i data-lucide="file-badge" class="w-5 h-5 text-amber-400"></i>
                     <h3 class="text-base font-bold text-white">Peraturan Gubernur (Pergub) Surat</h3>
                 </div>
-                <button id="close-pergub-modal-btn" class="p-1.5 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-colors">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-            <div class="py-6 text-slate-300 text-sm">
-                Informasi dan dokumen terkait Peraturan Gubernur mengenai tata naskah dinas dan persuratan dapat diakses melalui arsip resmi instansi.
-            </div>
-        </div>
-    </div>
+        // Hilangkan sisi/latar hitam pada tanda tangan secara otomatis menggunakan Canvas + auto-crop tepi hitam
+        (function processSignatureTransparency() {
+            const img = document.getElementById('signature-img-fallback');
+            const canvas = document.getElementById('signature-canvas');
+            if (!img || !canvas) return;
 
-    <!-- MODAL LAYANAN -->
-    <div id="service-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md hidden p-3 sm:p-6">
-        <div class="relative w-full max-w-4xl bg-slate-900/95 border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden p-6 text-center max-h-[85vh]">
-            <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10 flex-shrink-0">
-                <div class="flex items-center gap-2.5">
-                    <div id="service-modal-icon-container" class="w-8 h-8 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center">
-                        <i id="service-modal-inner-icon" data-lucide="layers" class="w-4 h-4"></i>
-                    </div>
-                    <h3 id="service-modal-title" class="text-base font-bold text-white">Layanan Persuratan</h3>
-                </div>
-                <button id="close-service-modal-btn" class="p-1.5 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-colors">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto py-4">
-                <h4 id="service-modal-heading" class="text-sm font-bold text-slate-200 mb-2">Pilih Layanan</h4>
-                <div id="service-modal-desc" class="text-xs text-slate-400"></div>
-            </div>
-        </div>
-    </div>
+            const renderTransparentSignature = () => {
+                try {
+                    const tempCanvas = document.createElement('canvas');
+                    const tempCtx = tempCanvas.getContext('2d');
+                    const w = img.naturalWidth || 300;
+                    const h = img.naturalHeight || 120;
+                    tempCanvas.width = w;
+                    tempCanvas.height = h;
+                    tempCtx.drawImage(img, 0, 0, w, h);
 
-    <script>
-        // Inisialisasi ikon Lucide
-        lucide.createIcons();
+                    const imgData = tempCtx.getImageData(0, 0, w, h);
+                    const data = imgData.data;
+
+                    let minX = w, minY = h, maxX = 0, maxY = 0;
+                    let hasInk = false;
+
+                    for (let y = 0; y < h; y++) {
+                        for (let x = 0; x < w; x++) {
+                            const i = (y * w + x) * 4;
+                            const r = data[i];
+                            const g = data[i + 1];
+                            const b = data[i + 2];
+                            const maxChannel = Math.max(r, g, b);
+                            const brightness = (r + g + b) / 3;
+
+                            // Hapus total piksel hitam & sisi gelap di pinggir gambar
+                            if (brightness < 65 && maxChannel < 80) {
+                                data[i + 3] = 0;
+                            } else {
+                                // Perkuat opasitas goresan tinta agar tanda tangan tampil jauh lebih tajam dan jelas
+                                const normalized = (maxChannel - 65) / 190;
+                                const boostedAlpha = Math.min(255, Math.round(Math.pow(normalized, 0.55) * 255 * 2.2));
+                                data[i] = 255;
+                                data[i + 1] = 255;
+                                data[i + 2] = 255;
+                                data[i + 3] = boostedAlpha;
+
+                                if (boostedAlpha > 25) {
+                                    hasInk = true;
+                                    if (x < minX) minX = x;
+                                    if (x > maxX) maxX = x;
+                                    if (y < minY) minY = y;
+                                    if (y > maxY) maxY = y;
+                                }
+                            }
+                        }
+                    }
+
+                    tempCtx.putImageData(imgData, 0, 0);
+
+                    if (hasInk && maxX >= minX && maxY >= minY) {
+                        const pad = 6;
+                        const cropX = Math.max(0, minX - pad);
+                        const cropY = Math.max(0, minY - pad);
+                        const cropW = Math.min(w - cropX, (maxX - minX + 1) + pad * 2);
+                        const cropH = Math.min(h - cropY, (maxY - minY + 1) + pad * 2);
+
+                        canvas.width = cropW;
+                        canvas.height = cropH;
+                        const ctx = canvas.getContext('2d');
+                        // Gambar berulang tipis untuk menebalkan dan memperjelas goresan tanda tangan
+                        ctx.drawImage(tempCanvas, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
+                        ctx.globalAlpha = 0.7;
+                        ctx.drawImage(tempCanvas, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
+                        ctx.globalAlpha = 1.0;
+                    } else {
+                        canvas.width = w;
+                        canvas.height = h;
+                        canvas.getContext('2d').putImageData(imgData, 0, 0);
+                    }
+
+                    canvas.classList.remove('hidden');
+                    img.classList.add('hidden');
+                } catch (e) {
+                    // Fallback jika CORS membatasi pembacaan piksel: gunakan mask radial + kontras tinggi
+                    console.warn('Menggunakan fallback mask & blend mode untuk tanda tangan:', e);
+                }
+            };
+
+            if (img.complete && img.naturalWidth > 0) {
+                renderTransparentSignature();
+            } else {
+                img.addEventListener('load', renderTransparentSignature);
+            }
+        })();
 
         // ==========================================
         // 0. MODAL JENDELA DATA, PERGUB & 4 LAYANAN
