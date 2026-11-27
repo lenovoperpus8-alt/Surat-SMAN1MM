@@ -2495,14 +2495,14 @@
             if (mode === 'full') {
                 window.open(url, '_blank', 'noopener,noreferrer');
             } else if (mode === 'inframe') {
-                // Konversi tautan Google Drive /file/d/{ID}/view atau Google Spreadsheet menjadi mode embed/preview agar tampil di iframe
+                // Konversi tautan Google Drive /file/d/{ID}/view atau Google Spreadsheet menjadi mode embed/edit agar bisa langsung diedit di iframe
                 let embedUrl = url;
                 const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
                 const sheetMatch = url.match(/docs\.google\.com\/spreadsheets\/d\/([^/]+)/);
                 if (driveMatch && driveMatch[1]) {
                     embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
                 } else if (sheetMatch && sheetMatch[1]) {
-                    embedUrl = `https://docs.google.com/spreadsheets/d/${sheetMatch[1]}/preview`;
+                    embedUrl = `https://docs.google.com/spreadsheets/d/${sheetMatch[1]}/edit?usp=drive_link`;
                 } else if (url.includes('docs.google.com/forms')) {
                     embedUrl = url.includes('embedded=true')
                         ? url
